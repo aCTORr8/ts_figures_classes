@@ -17,7 +17,9 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('The sides of the triangle must be greater than 0');
+      throw new Error(
+        'The sides of the triangle must be greater than 0'
+      );
     }
 
     const longestSide = Math.max(a, b, c);
@@ -25,8 +27,7 @@ export class Triangle implements Figure {
 
     if (longestSide >= sumOfOthers) {
       throw new Error(
-        `The longest side of a triangle must be greater than
-        or equal to the sum of the other two sides`,
+        'The longest side of a triangle must be less than the sum of the other two sides',
       );
     }
   }
@@ -40,7 +41,7 @@ export class Triangle implements Figure {
         (halfPerimetr - this.c),
     );
 
-    return Math.round(area * 100) / 100;
+    return Math.floor(area * 100) / 100;
   }
 }
 
@@ -52,7 +53,9 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('The radius must be greater than 0');
+      throw new Error(
+        'The radius must be greater than 0'
+      );
     }
   }
 
@@ -68,18 +71,20 @@ export class Rectangle implements Figure {
 
   constructor(
     public color: Color,
-    public a: number,
-    public b: number,
+    public width: number,
+    public height: number,
   ) {
-    if (a <= 0 || b <= 0) {
-      throw new Error('The sides of the rectangle must be greater than 0');
+    if (width <= 0 || height <= 0) {
+      throw new Error(
+        'Width and height of the rectangle must be greater than 0'
+      );
     }
   }
 
   getArea(): number {
-    const area = this.a * this.b;
+    const area = this.width * this.height;
 
-    return Math.round(area * 100) / 100;
+    return Math.floor(area * 100) / 100;
   }
 }
 
