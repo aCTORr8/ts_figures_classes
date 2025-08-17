@@ -18,7 +18,7 @@ export class Triangle implements Figure {
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
       throw new Error(
-        'The sides of the triangle must be greater than 0'
+        `The sides of the triangle must be greater than 0`
       );
     }
 
@@ -27,7 +27,7 @@ export class Triangle implements Figure {
 
     if (longestSide >= sumOfOthers) {
       throw new Error(
-        'The longest side of a triangle must be less than the sum of the other two sides',
+        `The longest side of a triangle must be less than the sum of the other two sides`,
       );
     }
   }
@@ -54,7 +54,7 @@ export class Circle implements Figure {
   ) {
     if (radius <= 0) {
       throw new Error(
-        'The radius must be greater than 0'
+        `The radius must be greater than 0`
       );
     }
   }
@@ -76,7 +76,7 @@ export class Rectangle implements Figure {
   ) {
     if (width <= 0 || height <= 0) {
       throw new Error(
-        'Width and height of the rectangle must be greater than 0'
+        `Width and height of the rectangle must be greater than 0`,
       );
     }
   }
